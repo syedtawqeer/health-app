@@ -1,0 +1,281 @@
+/* General Body and Layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More professional font */
+    line-height: 1.6;
+    margin: 0;
+    background-color: #EAF7F8; /* A slightly lighter, soft teal */
+    color: #222; /* Darker font color for better readability */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    min-height: 100vh; /* Ensure it takes full viewport height */
+    padding-bottom: 120px; /* More padding at the bottom for the fixed input */
+    position: relative; /* Needed for absolute positioning of subtle graphics */
+}
+
+.container {
+    max-width: 800px; /* Slightly smaller container */
+    width: 100%;
+    margin: 0 auto; /* Center the container */
+    padding: 20px; /* Add padding */
+    box-sizing: border-box;
+    flex-grow: 1; /* Allow container to grow and fill available space */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+h1 {
+    color: #1E7C77; /* Darker teal heading */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* Form Styling */
+form { /* Position the form at the bottom */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF; /* White background for the input area */
+    padding: 15px 20px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Softer shadow at the top */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center items */
+}
+
+textarea {
+    flex-grow: 1; /* Allow textarea to take up most of the space */
+    padding: 12px 15px;
+    border: none; /* No border */
+    border-radius: 8px;
+    font-size: 1em; /* Keep font size consistent */
+    background-color: #ECF6F7; /* Very light teal for input */
+    color: #333; /* Match body text color */
+    box-sizing: border-box; /* Include padding in width */
+    resize: none; /* Disable resizing */
+    margin-right: 10px; /* Space between textarea and button */
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(30, 124, 119, 0.4); /* Teal shadow on focus */
+}
+
+input[type="submit"] {
+    background-color: #FF6B6B; /* Coral button */
+    color: white;
+    padding: 12px 25px; /* Slightly wider button */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700; /* Bolder text */
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(255, 107, 107, 0.4); /* Coral button shadow */
+}
+
+input[type="submit"]:hover {
+    background-color: #E55C5C; /* Darker coral on hover */
+    transform: translateY(-1px); /* Subtle lift */
+}
+
+input[type="submit"]:disabled {
+    background-color: #CCCCCC; /* Lighter disabled color */
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: 0.7; /* Slightly transparent when disabled */
+}
+
+/* Response Area Styling */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFFF; /* White background for sections */
+    border: none; /* Remove border */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    word-wrap: break-word; /* Prevent long words from overflowing */
+    flex-grow: 1; /* Allow container to grow and fill available space */
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+
+.response-section { /* Style for each main section of the response */
+    margin-bottom: 15px;
+}
+
+/* Style for the response area itself */
+#response-area {
+    padding: 0; /* Remove padding as container has it */
+}
+
+.results-title {
+    color: #1E7C77; /* Darker teal for titles */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+    font-weight: 600;
+    border-bottom: 2px solid #ECF6F7; /* Light teal underline */
+    padding-bottom: 8px;
+}
+
+.result-description {
+    margin-bottom: 15px;
+    color: #333; /* Match body text color */
+    font-size: 1.05em; /* Slightly larger text */
+}
+
+/* List styling */
+.list {
+    list-style-type: disc; /* Disc bullets */
+    margin-left: 15px;
+    padding-left: 0;
+}
+
+.item {
+    margin-bottom: 8px;
+    color: #333; /* Match body text color */
+}
+
+/* Loading and Error Message Styles */
+.loading {
+    text-align: center;
+    font-style: italic;
+    color: #1E7C77; /* Teal color for loading */
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+.error {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+/* YouTube Video Section Styling */
+.youtube-videos {
+    margin-top: 20px;
+    border-top: 2px solid #ECF6F7; /* Light teal separator line */
+    padding-top: 15px;
+}
+
+.youtube-videos h2 {
+    color: #0056b3; /* Professional blue heading */
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.video-list {
+    display: grid; /* Use grid for a clean layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between videos */
+}
+
+.video-item {
+    background-color: #ffffff; /* White background for video items */
+    border-radius: 8px;
+    overflow: hidden; /* Hide anything outside the border-radius */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* Keep the existing hover effect or refine it */
+.video-item:hover {
+    transform: none; /* Remove lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Style for the video link */
+.video-item a {
+    text-decoration: none; /* Remove underline from link */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the whole item clickable */
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure image takes full width */
+    border-bottom: 1px solid #555; /* Darker border */
+}
+
+.video-details {
+    padding: 15px;
+}
+
+.video-details h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #333; /* Darker text color for title */
+    font-weight: 600;
+}
+
+/* Subtle Graphics - Circles (inspired by the image) */
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(30, 124, 119, 0.1); /* Semi-transparent teal */
+    border-radius: 50%; /* Make it a circle */
+    z-index: -1; /* Place behind content */
+}
+
+body::before {
+    top: 50px;
+    left: -50px;
+}
+
+body::after {
+    bottom: 50px;
+    right: -50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* Adjustments for tablets */
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .results-title {
+        font-size: 1.3em;
+    }
+
+}
+
+@media (max-width: 480px) { /* Adjustments for phones */
+    body {
+        padding-bottom: 90px; /* Adjust padding for smaller input */
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    form {
+        padding: 10px 15px; /* Smaller padding for input area */
+    }
+
+    textarea {
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+
+    input[type="submit"] {
+        padding: 10px 15px;
+    }
+}
